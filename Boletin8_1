@@ -1,0 +1,51 @@
+
+package boletin8;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ *
+ * @author dam1
+ */
+public class Boletin8 {
+
+    public static void main(String[] args)throws IOException {
+        
+        BufferedReader br= new BufferedReader (new InputStreamReader(System.in));
+        
+        Producto pc=new Producto();
+        System.out.println("Introduzca el nommre del producto: ");
+        pc.setNome(br.readLine());
+        System.out.println("Introduzca cantidad de ventas del producto: ");
+        pc.setVentas(Integer.parseInt(br.readLine()));
+        int v=pc.getVentas();
+        if(v<=100){
+            
+            System.out.println("El producto "+pc.getNome()+" tiene un consumo bajo.");
+            
+            
+            
+        }else{
+            if(v<=500){
+                
+                System.out.println("El producto "+pc.getNome()+" tiene un consumo medio.");
+                
+            }else{
+                
+                if(v<=1000){
+                    
+                    System.out.println("El producto "+pc.getNome()+" tiene un consumo alto.");
+                    
+                    
+                }else{
+                    
+                    System.out.println("El producto "+pc.getNome()+" tiene un consumo de primera necesidad.");
+                }
+            }
+            
+        }
+    }
+    
+}
